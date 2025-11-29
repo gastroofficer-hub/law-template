@@ -1,0 +1,18 @@
+{
+  "name": "law-template",
+  "version": "1.0.0",
+  "main": "doj-server.js",
+  "scripts": {
+    "start": "node doj-server.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.25.1",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2"
+  },
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

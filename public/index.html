@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LSSD DOJ Collaboration Request Form</title>
+    <style>
+        :root {
+            --lssd-tan: #d8c9a5;
+            --lssd-tan-dark: #b9a684;
+            --lssd-green: #2b4b24;
+            --lssd-green-light: #3f6a35;
+            --page-bg: rgba(12, 18, 10, 0.92);
+            --border-main: #f1e3ba;
+            --label-color: #f5f5f5;
+            --text-color: #f5f5f5;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 40px 0;
+            line-height: 1.4;
+            color: var(--text-color);
+            background:
+                url("https://www.dimex-tapety.cz/files/images/sklady/Dimex_line/Vlies_2022/pic_1400px/MS-5-2960.jpg")
+                no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .form-page,
+        .container {
+            background: var(--page-bg);
+            border: 1px solid var(--border-main);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 24px 28px 28px 28px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.7);
+        }
+
+        .header,
+        .header-line {
+            text-align: center;
+            margin-bottom: 18px;
+            padding: 10px 0 6px 0;
+            border-bottom: 2px solid var(--border-main);
+            background: linear-gradient(to right, rgba(0,0,0,0.3), rgba(216,201,165,0.22), rgba(0,0,0,0.3));
+        }
+
+        .header h1 {
+            font-size: 18px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin: 0 0 4px 0;
+            color: var(--lssd-tan);
+        }
+        .header p {
+            margin: 0;
+            font-size: 11px;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+
+        .form-section,
+        .section-box {
+            border: 1px solid rgba(241,227,186,0.65);
+            padding: 10px 12px 12px 12px;
+            margin-top: 10px;
+            background: rgba(10, 18, 8, 0.9);
+        }
+
+        .section-title {
+            display: inline-block;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 11px;
+            margin: -10px -12px 6px -12px;
+            padding: 3px 8px;
+            border-bottom: 1px solid rgba(241,227,186,0.9);
+            background: linear-gradient(to right, var(--lssd-green), var(--lssd-tan-dark));
+            color: #fff;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 6px;
+        }
+        .form-row.full {
+            flex-direction: column;
+        }
+        .form-group {
+            flex: 1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 2px;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--label-color);
+        }
+
+        input[type="text"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 4px 6px;
+            font-size: 11px;
+            border: 1px solid #555;
+            border-radius: 2px;
+            background: #151b11;
+            color: #f5f5f5;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #7d8476;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 50px;
+        }
+
+        .info-box,
+        .note {
+            border: 1px dashed rgba(241,227,186,0.7);
+            background: rgba(18, 28, 16, 0.95);
+            padding: 6px 8px;
+            font-size: 11px;
+            margin-top: 6px;
+        }
+
+        .footer-note {
+            margin-top: 14px;
+            font-size: 10px;
+            text-align: right;
+            color: rgba(241,227,186,0.85);
+            text-transform: uppercase;
+        }
+
+        .footer {
+            margin-top: 16px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .btn {
+            min-width: 130px;
+            padding: 7px 16px;
+            border-radius: 3px;
+            border: 1px solid #111;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            background: linear-gradient(to bottom, #f0f0f0, #bbbbbb);
+            color: #111;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+        }
+        .btn:hover {
+            background: linear-gradient(to bottom, #ffffff, #dcdcdc);
+        }
+
+        .btn-submit {
+            background: linear-gradient(to bottom, var(--lssd-green-light), #1f361b);
+            color: #fff;
+            border-color: #0c1b0a;
+        }
+        .btn-submit:hover {
+            background: linear-gradient(to bottom, #3b7240, #254323);
+        }
+
+        .seal {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 6px auto;
+            background-image: url("https://lssd.cz/wp-content/uploads/2024/01/Ce1JUe9.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="seal"></div>
+            <h1>Los Santos County Sheriff Department</h1>
+            <p>Žádost o zahájení trestního stíhání / Spolupráci s Department of Justice</p>
+        </div>
+
+        <!-- FORM -->
+        <form id="lssdForm">
+            <!-- 1) Informace o žádosti -->
+            <div class="form-section">
+                <div class="section-title">Informace o žádosti</div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="caseNumber" class="required">Číslo případu</label>
+                        <input type="text" id="caseNumber" name="caseNumber" placeholder="LSSD-2025-00001" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="requestDate" class="required">Datum žádosti</label>
+                        <input type="date" id="requestDate" name="requestDate" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="requestingOfficer" class="required">Požadující člen sboru</label>
+                        <input type="text" id="requestingOfficer" name="requestingOfficer" placeholder="Full Name & Badge #" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="rank" class="required">Hodnost</label>
+                        <select id="rank" name="rank" required>
+                            <option value="">- Vyber hodnost -</option>
+                            <option value="deputy">Deputy</option>
+                            <option value="corporal">Master FTO</option>
+                            <option value="sergeant">Sergeant</option>
+                            <option value="lieutenant">Lieutenant</option>
+                            <option value="captain">Captain</option>
+                            <option value="commander">Commander</option>
+                            <option value="undersheriff">Under-Sheriff</option>
+                            <option value="sheriff">Sheriff</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2) Informace o pachateli -->
+            <div class="form-section">
+                <div class="section-title">Informace o pachateli</div>
+                <div class="form-row full">
+                    <div class="form-group">
+                        <label for="suspectName" class="required">Celé jméno</label>
+                        <input type="text" id="suspectName" name="suspectName" placeholder="First Name / Last Name" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="suspectDOB" class="required">Datum narození</label>
+                        <input type="date" id="suspectDOB" name="suspectDOB" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="suspectID" class="required">ID Číslo / Licence</label>
+                        <input type="text" id="suspectID" name="suspectID" placeholder="Driver License / ID #" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="detentionStatus" class="required">Aktuální stav zadržení/zajištění</label>
+                        <select id="detentionStatus" name="detentionStatus" required>
+                            <option value="">- Vyberte Stav osoby -</option>
+                            <option value="custody">Ve vazbě</option>
+                            <option value="bail">Propuštěn na kauci</option>
+                            <option value="release">Propuštěn (bez poplatků)</option>
+                            <option value="awaiting">Čekání na prodloužení vazby</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="arrestDate" class="required">Datum zajištění/zadržení</label>
+                        <input type="date" id="arrestDate" name="arrestDate" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3) Žádost o prodloužení vazby -->
+            <div class="form-section">
+                <div class="section-title">Žádost o prodloužení vazby</div>
+                <div class="info-box">
+                    Žádost o prodloužení vazby do doby, než ministerstvo spravedlnosti přezkoumá situaci a zahájí trestní stíhání.
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="currentBailExpiry" class="required">Aktuální platnost vazby / limit zadržení</label>
+                        <input type="date" id="currentBailExpiry" name="currentBailExpiry" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="requestedExtension" class="required">Požadované prodloužení vazby</label>
+                        <select id="requestedExtension" name="requestedExtension" required>
+                            <option value="">- Zvolte prodloužení -</option>
+                            <option value="48hours">48 Hodin</option>
+                            <option value="72hours">72 Hodin</option>
+                            <option value="5days">5 Dní</option>
+                            <option value="10days">10 Dní</option>
+                            <option value="14days">14 Dní</option>
+                            <option value="30days">30 Dní</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row full">
+                    <div class="form-group">
+                        <label for="extensionReason" class="required">Odůvodnění prodloužení</label>
+                        <textarea id="extensionReason" name="extensionReason" placeholder="Odůvodnění prodloužení..." required></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4) Prvotní obvinění -->
+            <div class="form-section">
+                <div class="section-title">Prvotní obvinění a počáteční obvinění</div>
+                <div class="form-row full">
+                    <div class="form-group">
+                        <label for="primaryCharge" class="required">Prvotní Obvinění (Penal Code)</label>
+                        <input type="text" id="primaryCharge" name="primaryCharge" placeholder="Např. PC §187 - Murder / PC §459 - Burglary" required>
+                    </div>
+                </div>
+                <div class="form-row full">
+                    <div class="form-group">
+                        <label for="chargeNarrative" class="required">Informace a okolnosti obvinění</label>
+                        <textarea id="chargeNarrative" name="chargeNarrative" placeholder="Podrobnosti obvinění..." required></textarea>
+                    </div>
+                </div>
+                <div class="form-row full">
+                    <div class="form-group">
+                        <label for="additionalCharges">Dodatečné obvinění</label>
+                        <textarea id="additionalCharges" name="additionalCharges" placeholder="Např. PC §148 - Resisting Arrest, PC §182 - Conspiracy (volitelné)"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5) Evidence -->
+            <div class="form-section">
+                <div class="section-title">Evidence & Dokumentace</div>
+                <div class="note">
+                    <strong>Poznámka:</strong> Veškeré důkazy musí být řádně katalogizovány a udržován řetězec úschovy v souladu s protokolem LSSD.
+                </div>
+                <div class="form-group">
+                    <label for="evidenceType" class="required">Důkaz (typ)</label>
+                    <input type="text" id="evidenceType" name="evidenceType" placeholder="Např. Zbraň, Dokumenty, Digitální stopa">
+                </div>
+                <div class="form-group">
+                    <label for="evidenceDescription" class="required">Popis a umístění důkazu</label>
+                    <input type="text" id="evidenceDescription" name="evidenceDescription" placeholder="Popis a umístění důkazu">
+                </div>
+                <div id="evidenceList"></div>
+                <div class="form-row full">
+                    <div class="form-group">
+                        <label for="evidenceNotes">Souhrn důkazů a poznámky k řetězci úschovy</label>
+                        <textarea id="evidenceNotes" name="evidenceNotes" placeholder="Souhrn evidence, poznámky..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6) Svědci -->
+            <div class="form-section">
+                <div class="section-title">Klíčoví svědci a výpovědi</div>
+                <div class="form-row full">
+                    <div class="form-group">
+                        <label for="witnesses">Seznam osob (jméno, role, kontakt)</label>
+                        <textarea id="witnesses" name="witnesses" placeholder="1. ...&#10;2. ..."></textarea>
+                    </div>
+                </div>
+                <div class="form-row full">
+                    <div class="form-group">
+                        <label for="statements">Shrnutí klíčových prohlášení a svědectví</label>
+                        <textarea id="statements" name="statements" placeholder="Shrnutí výpovědí a důkazů..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7) DOJ / State Attorney -->
+            <div class="form-section">
+                <div class="section-title">Přidělený State Attorney</div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="assignedProsecutor" class="required">Přidělený Attorney</label>
+                        <input type="text" id="assignedProsecutor" name="assignedProsecutor" placeholder="Jméno a pozice" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="prosecutionStatus" class="required">Status</label>
+                        <select id="prosecutionStatus" name="prosecutionStatus" required>
+                            <option value="">- Zvolte Status -</option>
+                            <option value="pending">Čeká na vyhodnocení</option>
+                            <option value="approved">Schváleno</option>
+                            <option value="denied">Zamítnuto</option>
+                            <option value="modified">Schváleno s úpravami</option>
+                            <option value="investigation">Vyžaduje další prošetření</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row full">
+                    <div class="form-group">
+                        <label for="prosecutorNotes" class="required">Poznámky Attorney</label>
+                        <textarea id="prosecutorNotes" name="prosecutorNotes" placeholder="Detaily rozhodnutí, poznámky..." required></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8) Podpisy -->
+            <div class="form-section">
+                <div class="section-title">Certifikace & Autorizační podpisy</div>
+                <div class="info-box">
+                    Tímto potvrzuji, že informace uvedené v této žádosti jsou pravdivé a důkazy řádně shromážděné dle protokolu.
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="requestingOfficerSig" class="required">Žádající jednotka (RP: /sign)</label>
+                        <input type="text" id="requestingOfficerSig" name="requestingOfficerSig" placeholder="Officer Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="supervisorApproval" class="required">Schválení nadřízeným</label>
+                        <input type="text" id="supervisorApproval" name="supervisorApproval" placeholder="Nadřízený" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="dojSignature">Podpis Attorney</label>
+                        <input type="text" id="dojSignature" name="dojSignature" placeholder="Prokurátor">
+                    </div>
+                    <div class="form-group">
+                        <label for="approvalDate">Datum schválení</label>
+                        <input type="date" id="approvalDate" name="approvalDate">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9) Další poznámky -->
+            <div class="form-section">
+                <div class="section-title">Další poznámky a komentáře</div>
+                <div class="form-row full">
+                    <div class="form-group">
+                        <label for="additionalNotes">Další informace (volitelné)</label>
+                        <textarea id="additionalNotes" name="additionalNotes" placeholder="Speciální okolnosti, upřesnění..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <button class="btn btn-submit" type="submit">Odeslat žádost</button>
+                <button class="btn btn-print" type="button" onclick="printForm()">Tisknout</button>
+                <button class="btn btn-reset" type="reset">Vyčistit</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        let evidenceCount = 0;
+
+        function addEvidence() {
+            const typeInput = document.getElementById('evidenceType');
+            const descInput = document.getElementById('evidenceDescription');
+            const type = typeInput.value.trim();
+            const desc = descInput.value.trim();
+
+            if (type === '' || desc === '') {
+                alert('Please fill in both Evidence Type and Description');
+                return;
+            }
+
+            evidenceCount++;
+            const evidenceList = document.getElementById('evidenceList');
+            const evidenceItem = document.createElement('div');
+            evidenceItem.className = 'evidence-item added';
+            evidenceItem.id = 'evidence-' + evidenceCount;
+            evidenceItem.innerHTML = `
+                <div>
+                    <strong>${type}</strong><br>
+                    <small style="color: #666;">${desc}</small>
+                </div>
+                <button class="remove-btn" onclick="removeEvidence(${evidenceCount})">Remove</button>
+            `;
+            evidenceList.appendChild(evidenceItem);
+
+            typeInput.value = '';
+            descInput.value = '';
+            typeInput.focus();
+        }
+
+        function removeEvidence(id) {
+            document.getElementById('evidence-' + id).remove();
+        }
+
+        function printForm() {
+            window.print();
+        }
+
+        document.getElementById('requestDate').valueAsDate = new Date();
+
+        document.getElementById('lssdForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const requiredIds = [
+                'caseNumber', 'requestDate', 'requestingOfficer', 'rank',
+                'suspectName', 'suspectDOB', 'suspectID', 'detentionStatus', 'arrestDate',
+                'currentBailExpiry', 'requestedExtension', 'extensionReason',
+                'primaryCharge', 'chargeNarrative',
+                'prosecutionStatus', 'prosecutorNotes',
+                'requestingOfficerSig', 'supervisorApproval'
+            ];
+
+            for (const id of requiredIds) {
+                const el = document.getElementById(id);
+                if (el && !el.value.trim()) {
+                    alert('Doplň prosím pole: ' + (el.previousElementSibling ? el.previousElementSibling.textContent : id));
+                    el.focus();
+                    return;
+                }
+            }
+
+            const payload = {};
+            const form = document.getElementById('lssdForm');
+            const formElements = form.querySelectorAll('input, select, textarea');
+            
+            formElements.forEach(element => {
+                if (element.name && element.name !== '') {
+                    if (element.type === 'checkbox' || element.type === 'radio') {
+                        if (element.checked) {
+                            payload[element.name] = element.value;
+                        }
+                    } else {
+                        payload[element.name] = element.value || '';
+                    }
+                }
+            });
+            
+            const evidenceItems = document.querySelectorAll('.evidence-item.added');
+            payload.evidenceList = Array.from(evidenceItems).map(item => ({
+                type: item.querySelector('strong')?.textContent || '',
+                description: item.querySelector('small')?.textContent || ''
+            }));
+
+            try {
+                const res = await fetch('/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!res.ok) {
+                    throw new Error('HTTP ' + res.status);
+                }
+
+                alert('Žádost byla odeslána do DOJ kanálu.');
+            } catch (err) {
+                console.error(err);
+                alert('Při odesílání žádosti došlo k chybě.');
+            }
+        });
+    </script>
+</body>
+</html>
